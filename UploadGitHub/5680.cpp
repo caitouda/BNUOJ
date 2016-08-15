@@ -1,4 +1,4 @@
-#include<cmath>
+ï»¿#include<cmath>
 #include<iostream>
 
 using namespace std;
@@ -10,48 +10,48 @@ int main()
     for(int c=1; c<=cases; c++)
     {
         char left[3][6], right[3][6], status[3][6];
-        int time['L'+1]={0}; //˜ËÓ›¸÷‚€×ÖÄ¸±»‘ÑÒÉµÄ´Î”µ
-        bool zero['L'+1]={false}; //˜ËÓ›½^Œ¦žéÕæŽÅµÄ×ÖÄ¸£¨ÁîÌìèÒÆ½ºâµÄËùÓÐ×ÖÄ¸£©
+        int time['L'+1]={0}; //æ¨™è¨˜å„å€‹å­—æ¯è¢«æ‡·ç–‘çš„æ¬¡æ•¸
+        bool zero['L'+1]={false}; //æ¨™è¨˜çµ•å°ç‚ºçœŸå¹£çš„å­—æ¯ï¼ˆä»¤å¤©æž°å¹³è¡¡çš„æ‰€æœ‰å­—æ¯ï¼‰
         for(int k=0; k<3; k++)
             cin>>left[k]>>right[k]>>status[k];
         for(int i=0; i<3; i++)
         {
-            switch(status[i][0]) //™z²éÌìèÒ î‘B
+            switch(status[i][0]) //æª¢æŸ¥å¤©æž°ç‹€æ…‹
             {
-            case 'u': //up£¬ÌìèÒ×óÖØÓÒÝp
+            case 'u': //upï¼Œå¤©æž°å·¦é‡å³è¼•
             {
                 for(int j=0; left[i][j]; j++)
                 {
-                    time[left[i][j]]++; //×óÖØ
-                    time[right[i][j]]--; //ÓÒÝp
+                    time[left[i][j]]++; //å·¦é‡
+                    time[right[i][j]]--; //å³è¼•
                 }
                 break;
             }
-            case 'd': //down£¬ÌìèÒ×óÝpÓÒÖØ
+            case 'd': //downï¼Œå¤©æž°å·¦è¼•å³é‡
             {
                 for(int j=0; left[i][j]; j++)
                 {
-                    time[left[i][j]]--; //×óÝp
-                    time[right[i][j]]++; //ÓÒÖØ
+                    time[left[i][j]]--; //å·¦è¼•
+                    time[right[i][j]]++; //å³é‡
                 }
                 break;
             }
-            case 'e': //even£¬ÌìèÒÆ½ºâ
+            case 'e': //evenï¼Œå¤©æž°å¹³è¡¡
             {
                 for(int j=0; left[i][j]; j++)
                 {
-                    zero[left[i][j]]=true; //½^Œ¦ÕæŽÅ
-                    zero[right[i][j]]=true; //½^Œ¦ÕæŽÅ
+                    zero[left[i][j]]=true; //çµ•å°çœŸå¹£
+                    zero[right[i][j]]=true; //çµ•å°çœŸå¹£
                 }
                 break;
             }
             }
         }
-        int max=-1; //²éÕÒ±»‘ÑÒÉ³Ì¶È×î¸ßµÄÓ²ŽÅ£¨¼ÙŽÅ£©
+        int max=-1; //æŸ¥æ‰¾è¢«æ‡·ç–‘ç¨‹åº¦æœ€é«˜çš„ç¡¬å¹£ï¼ˆå‡å¹£ï¼‰
         char alpha;
         for(int j='A'; j<='L'; j++)
         {
-            if(zero[j]) //½^Œ¦ÕæŽÅ
+            if(zero[j]) //çµ•å°çœŸå¹£
                 continue;
             if(max<=abs(time[j]))
             {

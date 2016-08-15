@@ -1,19 +1,19 @@
-#include<stdio.h>
+ï»¿#include<stdio.h>
 #include<math.h>
 
 int main()
 {
     char str[1000];
-    int N, n=1; //N±íÊ¾¿‚µÄÑ­­h´Î”µ£¬n±íÊ¾®”Ç°µÄĞĞ”µ
+    int N, n=1; //Nè¡¨ç¤ºç¸½çš„å¾ªç’°æ¬¡æ•¸ï¼Œnè¡¨ç¤ºç•¶å‰çš„è¡Œæ•¸
     scanf("%d", &N);
-    getchar(); //ÎüÊÕ»ØÜ‡
+    getchar(); //å¸æ”¶å›è»Š
     while(1)
     {
         if(N==0)
             break;
         gets(str);
         printf("Problem #%d\n", n);
-        int i, xsd, j; //Ğ¡”µüc
+        int i, xsd, j; //å°æ•¸é»
         double sum;
         double P=0, I=0, U=0;
         for(i=0; str[i]!='\0'; i++)

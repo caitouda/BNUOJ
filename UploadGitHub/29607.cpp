@@ -1,8 +1,8 @@
-#include<iostream>
+ï»¿#include<iostream>
 
 using namespace std;
 
-/*µÃµ½HaabšvÔÂ·İŒ¦‘ªµÄ”µ×Ö*/
+/*å¾—åˆ°Haabæ­·æœˆä»½å°æ‡‰çš„æ•¸å­—*/
 int GetMonth(char* month)
 {
     int ASCII=0;
@@ -51,11 +51,11 @@ int GetMonth(char* month)
     }
 }
 
-/*Ó‹ËãHaabšvÄµÚ0Ììµ½¬FÔÚµÄÌì”µ*/
+/*è¨ˆç®—Haabæ­·å¾ç¬¬0å¤©åˆ°ç¾åœ¨çš„å¤©æ•¸*/
 int HaabDay(int day, int month, int year)
 {
     int sumday=0;
-    for(int i=0; i<year; i++) //Haab•Ñ·¨Ò»ÄêÓĞ365Ìì
+    for(int i=0; i<year; i++) //Haabæ›†æ³•ä¸€å¹´æœ‰365å¤©
         sumday+=365;
     for(int j=1; j<month; j++)
         sumday+=20;
@@ -66,16 +66,16 @@ int main()
 {
     char TzolkinDayName_Str[21][10]={"0", "imix", "ik", "akbal", "kan", "chicchan", "cimi", "manik", "lamat", "muluk", "ok", "chuen", "eb", "ben", "ix", "mem", "cib", "caban", "eznab", "canac", "ahau"};
     int day;
-    char doc; //×¢Òâİ”Èë¸ñÊ½ÓĞ"."
+    char doc; //æ³¨æ„è¼¸å…¥æ ¼å¼æœ‰"."
     char month[10];
     int year;
     int test;
     cin>>test;
     cout<<test<<endl;
-    while(test--&&(cin>>day>>doc>>month>>year)) //ÈÕÆÚ. ÔÂ·İ Äê”µ
+    while(test--&&(cin>>day>>doc>>month>>year)) //æ—¥æœŸ. æœˆä»½ å¹´æ•¸
     {
         int sumday=HaabDay(day, GetMonth(month), year);
-        int TzolkinYear=sumday/260;  //Tzolkin•Ñ·¨Ò»ÄêÓĞ260Ìì
+        int TzolkinYear=sumday/260;  //Tzolkinæ›†æ³•ä¸€å¹´æœ‰260å¤©
         int TzolkinDayName=sumday%20+1;
         int TzolkinDayId=sumday%13+1;
         cout<<TzolkinDayId<<' '<<TzolkinDayName_Str[TzolkinDayName]<<' '<<TzolkinYear<<endl;

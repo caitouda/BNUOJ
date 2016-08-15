@@ -1,4 +1,4 @@
-#include<stdio.h>
+ï»¿#include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 #define END -1
@@ -8,10 +8,10 @@ using namespace std;
 const int maxn=1001;
 int BigNumber[maxn]={0};
 
-void multiple(int a[], int n) //´óÕû”µÏà³Ë
+void multiple(int a[], int n) //å¤§æ•´æ•¸ç›¸ä¹˜
 {
     int i, j;
-    int c=0; //ßMÎ»
+    int c=0; //é€²ä½
     for(i=1; i<=a[0]; i++)
     {
         a[i]=a[i]*n+c;
@@ -23,31 +23,31 @@ void multiple(int a[], int n) //´óÕû”µÏà³Ë
         a[i++]=c%10;
         c/=10;
     }
-    a[0]=i-1; //a[0]ƒ¦´æ´óÕû”µÎ»”µ
+    a[0]=i-1; //a[0]å„²å­˜å¤§æ•´æ•¸ä½æ•¸
     return;
 }
 
 void output(int pos)
 {
     int i, j;
-    if(BigNumber[0]>pos) //ÓĞÕû”µ
+    if(BigNumber[0]>pos) //æœ‰æ•´æ•¸
     {
-        for(j=0, i=BigNumber[0]; j<BigNumber[0]-pos; j++, i--) //ÓĞÕû”µİ”³öĞ¡”µücÇ°µÄ”µ×Ö
+        for(j=0, i=BigNumber[0]; j<BigNumber[0]-pos; j++, i--) //æœ‰æ•´æ•¸è¼¸å‡ºå°æ•¸é»å‰çš„æ•¸å­—
             printf("%d", BigNumber[i]);
-        for(j=1; BigNumber[j]==0; j++) //È¥Áã
+        for(j=1; BigNumber[j]==0; j++) //å»é›¶
             BigNumber[j]=END;
-        if(BigNumber[i]==END||i==0) //Õû”µµÄÔ’
+        if(BigNumber[i]==END||i==0) //æ•´æ•¸çš„è©±
             return;
         printf(".");
-        for(; BigNumber[i]!=END&&i>=1 ; i--) //İ”³öĞ¡”µücááµÄ”µ×Ö
+        for(; BigNumber[i]!=END&&i>=1 ; i--) //è¼¸å‡ºå°æ•¸é»å¾Œçš„æ•¸å­—
             printf("%d", BigNumber[i]);
     }
-    else //ŸoÕû”µ
+    else //ç„¡æ•´æ•¸
     {
         printf(".");
         for(i=0; i<pos-BigNumber[0]; i++)
             printf("0");
-        for(j=1; BigNumber[j]==0; j++) //È¥Áã
+        for(j=1; BigNumber[j]==0; j++) //å»é›¶
             BigNumber[j]=END;
         for(i=BigNumber[0]; BigNumber[i]!=END&&i>=1; i--)
             printf("%d", BigNumber[i]);
@@ -66,20 +66,20 @@ int main()
         int l=strlen(s);
         num=0;
         memset(BigNumber, 0 ,sizeof(BigNumber));
-        for(i=0, pos=5; i<l ; i++) //POS=5 £¬ÈfÒ»›]ÓĞĞ¡”µüc£¬„tPOS=5
+        for(i=0, pos=5; i<l ; i++) //POS=5 ï¼Œè¬ä¸€æ²’æœ‰å°æ•¸é»ï¼Œå‰‡POS=5
         {
             if(s[i]=='.')
                 pos=i;
             else
-                num=num*10+s[i]-'0'; //Œ¢Ğ¡”µŞD“QéÕû”µ
+                num=num*10+s[i]-'0'; //å°‡å°æ•¸è½‰æ›ç‚ºæ•´æ•¸
         }
         BigNumber[0]=BigNumber[1]=1;
-        pos=(5-pos)*n; //Ò»¹²ÓĞ×Î»Ğ¡”µ
+        pos=(5-pos)*n; //ä¸€å…±æœ‰å¹¾ä½å°æ•¸
         while(n--)
         {
-            multiple(BigNumber, num); //´ó”µÏà³Ë
+            multiple(BigNumber, num); //å¤§æ•¸ç›¸ä¹˜
         }
-        output(pos); //İ”³ö
+        output(pos); //è¼¸å‡º
         printf("\n");
     }
     return 0;

@@ -1,4 +1,4 @@
-#include<string>
+ï»¿#include<string>
 #include<iostream>
 
 using namespace std;
@@ -14,8 +14,8 @@ int main()
         string tureMingWen="";
         cin>>mingwen>>miwen;
         int m=miwen.length()/n;
-        //ÈônÊÇÐÐ”µ
-        //ß€Ô­¶þ¾S”µ½M
+        //è‹¥næ˜¯è¡Œæ•¸
+        //é‚„åŽŸäºŒç¶­æ•¸çµ„
         int index=0;
         for(int i=0; i<m; i++)
         {
@@ -24,7 +24,7 @@ int main()
                 word[j][i]=miwen[index++];
             }
         }
-        //ÄÃµ½Ã÷ÎÄ
+        //æ‹¿åˆ°æ˜Žæ–‡
         for(int i=0; i<n; i++)
         {
             for(int j=0; j<m; j++)
@@ -32,17 +32,17 @@ int main()
                 tureMingWen.append(1, word[i][j]);
             }
         }
-        //ÅÐ”àÊÇ·ñÕý´_
+        //åˆ¤æ–·æ˜¯å¦æ­£ç¢º
         if(tureMingWen.find(mingwen)!=string::npos)
         {
-            //ÕÒµ½ÁË£¬Ý”³ötureMingWen
+            //æ‰¾åˆ°äº†ï¼Œè¼¸å‡ºtureMingWen
             cout<<tureMingWen<<endl;
         }
         else
         {
             tureMingWen="";
-            //nÊÇÁÐ”µ
-            //ß€Ô­”µ½M
+            //næ˜¯åˆ—æ•¸
+            //é‚„åŽŸæ•¸çµ„
             int index=0;
             for(int i=0; i<n; i++)
             {
@@ -52,7 +52,7 @@ int main()
                 }
 
             }
-            //ÄÃµ½Ã÷ÎÄ
+            //æ‹¿åˆ°æ˜Žæ–‡
             for(int i=0; i<m; i++)
             {
                 for(int j=0; j<n; j++)

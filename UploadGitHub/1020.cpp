@@ -1,10 +1,10 @@
-#include<cstdio>
+ï»¿#include<cstdio>
 #include<algorithm>
 #include<queue>
 
 using namespace std;
 
-priority_queue<int,vector<int>, greater<int> >doct; //ƒÏÈê ÁĞ
+priority_queue<int,vector<int>, greater<int> >doct; //å„ªå…ˆéšŠåˆ—
 
 int main()
 {
@@ -23,13 +23,13 @@ int main()
         {
             scanf("%d", &a[i]);
         }
-        sort(a,a+n); //ÈË”µÄĞ¡µ½´óÅÅÁĞ
+        sort(a,a+n); //äººæ•¸å¾å°åˆ°å¤§æ’åˆ—
         for(i=0; i<m; i++)
         {
-            doct.push(a[n-1-i]); //Ä´óµ½Ğ¡ÔÚê Î²²åÈë
+            doct.push(a[n-1-i]); //å¾å¤§åˆ°å°åœ¨éšŠå°¾æ’å…¥
         }
         //printf("%d\n", doct.top());
-        for(i=m; i<n; i++) //®‹ˆD¿ÉµÃÄ¬ÕJƒÏÈ¼‰£ºÄ´óµ½Ğ¡£¨ê Ê××î´ó£©ĞŞ¸ÄƒÏÈ¼‰ÄĞ¡µ½´ó
+        for(i=m; i<n; i++) //ç•«åœ–å¯å¾—é»˜èªå„ªå…ˆç´šï¼šå¾å¤§åˆ°å°ï¼ˆéšŠé¦–æœ€å¤§ï¼‰ä¿®æ”¹å„ªå…ˆç´šå¾å°åˆ°å¤§
         {
             int temp;
             temp=doct.top()+a[n-1-i];

@@ -1,4 +1,4 @@
-#include<cmath>
+ï»¿#include<cmath>
 #include<iomanip>
 #include<iostream>
 
@@ -15,7 +15,7 @@ int main()
         b=sqrt((x1-x3)*(x1-x3)+(y1-y3)*(y1-y3));
         c=sqrt((x3-x2)*(x3-x2)+(y3-y2)*(y3-y2));
         p=(a+b+c)/2;
-        st=sqrt(p*(p-a)*(p-b)*(p-c)); //Èı½ÇĞÎÃæ·e£¬º£‚¹«Ê½
+        st=sqrt(p*(p-a)*(p-b)*(p-c)); //ä¸‰è§’å½¢é¢ç©ï¼Œæµ·å€«å…¬å¼
         r=a*b*c/(4*st);
         cir=2*pi*r;
         cout.setf(ios::fixed);

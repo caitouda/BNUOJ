@@ -1,4 +1,4 @@
-#include<cstring>
+ï»¿#include<cstring>
 #include<algorithm>
 #include<iostream>
 
@@ -11,7 +11,7 @@ struct dna
     string str;
 };
 
-/*sort±Èİ^º¯”µ*/
+/*sortæ¯”è¼ƒå‡½æ•¸*/
 bool cmp(const dna &a, const dna &b)
 {
     if(a.key!=b.key)
@@ -25,7 +25,7 @@ int main()
     int t, n, m, count;
     dna inv[110];
     cin>>n>>m;
-    /*ÇóÄæĞò”µŒ¦µÄ‚€”µ*/
+    /*æ±‚é€†åºæ•¸å°çš„å€‹æ•¸*/
     for(int i=0; i<m; i++)
     {
         cin>>str;
@@ -34,14 +34,14 @@ int main()
             for(int k=j+1; k<n; k++)
                 if(str[j]>str[k])
                     count++;
-        /*±£´æĞÅÏ¢*/
+        /*ä¿å­˜ä¿¡æ¯*/
         inv[i].key=count;
         inv[i].pos=i;
         inv[i].str=str;
     }
-    /*°´ÄæĞò”µŒ¦´óĞ¡/ĞòÌ–ÅÅĞò*/
+    /*æŒ‰é€†åºæ•¸å°å¤§å°/åºè™Ÿæ’åº*/
     sort(inv, inv+m, cmp);
-    /*İ”³ö½Y¹û*/
+    /*è¼¸å‡ºçµæœ*/
     for(int i=0; i<m; i++)
         cout<<inv[i].str<<endl;
     return 0;

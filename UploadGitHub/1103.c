@@ -1,4 +1,4 @@
-#include<stdio.h>
+ï»¿#include<stdio.h>
 #include<string.h>
 
 int main()
@@ -11,7 +11,7 @@ int main()
         scanf("%d", &n);
         if(n==0)
             break;
-        for(i=1; i<=n; i++) //³õÊ¼»¯
+        for(i=1; i<=n; i++) //åˆå§‹åŒ–
             for(j=1; j<=n; j++)
             {
                 if(i==j)
@@ -20,14 +20,14 @@ int main()
                 }
                 r[i][j]=0;
             }
-        for(i=1; i<=n; i++) //Œ¢Ø›ŽÅ·NîºÍÆä¾ŽÌ–Œ¦‘ªÆðí
+        for(i=1; i<=n; i++) //å°‡è²¨å¹£ç¨®é¡žå’Œå…¶ç·¨è™Ÿå°æ‡‰èµ·ä¾†
             scanf("%s", huo[i]);
         scanf("%d", &m);
         for(i=1; i<=m; i++)
         {
             scanf("%s %f %s", t1, &r1, t2);
             f=0;
-            for (j=1; j<=n; j++) //¸ù“þ¾ŽÌ–½¨Á¢r
+            for (j=1; j<=n; j++) //æ ¹æ“šç·¨è™Ÿå»ºç«‹r
             {
                 if(strcmp(huo[j], t1)==0)
                 {
@@ -45,13 +45,13 @@ int main()
             r[a][b]=r1;
         }
         getchar();
-        for(k=1; k<=n; k++) //¸¥ÂåÒÁµÂ
+        for(k=1; k<=n; k++) //å¼—æ´›ä¼Šå¾·
             for(i=1; i<=n; i++)
                 for(j=1; j<=n; j++)
                     if(r[i][j]<r[i][k]*r[k][j])
                         r[i][j]=r[i][k]*r[k][j];
         c=0;
-        for(i=1; i<=n; i++) //ÅÐ”àÊÇ·ñÓÐ…RÂÊ´óì¶µÄüc
+        for(i=1; i<=n; i++) //åˆ¤æ–·æ˜¯å¦æœ‰åŒ¯çŽ‡å¤§æ–¼çš„é»ž
             if(r[i][i]>1)
             {
                 c=1;

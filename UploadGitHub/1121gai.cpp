@@ -1,10 +1,10 @@
-#include<stdio.h>
+ï»¿#include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 
 char a[100010][44], c[44], d[44];
 
-int cmp_string(const void * _a, const void *_b) //±ÈÝ^º¯”µ
+int cmp_string(const void * _a, const void *_b) //æ¯”è¼ƒå‡½æ•¸
 {
     char *a=(char *)_a;
     char *b=(char *)_b;
@@ -16,7 +16,7 @@ int main()
     int t=1, temp=0;
     long i, j, z, n;
     scanf("%ld\n", &n);
-    for(i=0; i<n; i++) //ÞD»¯³É˜ËœÊÐÎÊ½
+    for(i=0; i<n; i++) //è½‰åŒ–æˆæ¨™æº–å½¢å¼
     {
         gets(d);
         for(j=0,z=0; d[z]!='\0'; z++)
@@ -49,9 +49,9 @@ int main()
             }
         }
     }
-    qsort(a,n,sizeof(a[0]), cmp_string); //°´×ÖµäÅÅÐò×Ö·û´®
+    qsort(a,n,sizeof(a[0]), cmp_string); //æŒ‰å­—å…¸æŽ’åºå­—ç¬¦ä¸²
     strcpy(c, a[0]);
-    for(i=1; i<n; i++) //½yÓ‹×Ö·û´®ÈôÓÐÏàÍ¬¼´Ý”³ö
+    for(i=1; i<n; i++) //çµ±è¨ˆå­—ç¬¦ä¸²è‹¥æœ‰ç›¸åŒå³è¼¸å‡º
     {
         while(strcmp(c, a[i])==0)
         {
@@ -66,7 +66,7 @@ int main()
         strcpy(c, a[i]);
         t=1;
     }
-    if(temp!=1) //Èô›]ÓÐÏàÍ¬µÄ¾ÍÝ”³öÒ»ÏÂƒÈÈÝ
+    if(temp!=1) //è‹¥æ²’æœ‰ç›¸åŒçš„å°±è¼¸å‡ºä¸€ä¸‹å…§å®¹
         printf("No duplicates. \n");
     return 0;
 }
